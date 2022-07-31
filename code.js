@@ -20,15 +20,8 @@ function userFunction()
 		for(i=0;i < trackList.numTracks; i++)
 		{
 			var track = trackList.getTrack(i)
-			var index = (i+1)
-
-			if (index.toString().length == 1)
-				index = ("00" + index)
-
-			if (index.toString().length == 2)
-				index = ("0" + index)
-
-			functions.renameEvent(track, index + "-" + track.name)
+			var pad = (i+1).toString().padStart(3, '0')
+			functions.renameEvent(track, pad + "-" + track.name)
 		}
 
 		return Host.Results.kResultOk;
