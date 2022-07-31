@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ClassFactory>
+	<ScriptClass
+		classID="{BFCF769E-3298-A993-C35E-3C8757763730}"
+		category="EditTask"
+		subCategory="TrackEdit"
+		name="Prefix Tracks With Numbers"
+		sourceFile="code.js"
+		functionName="createInstance">
+		<Attribute id="menuPriority" value="0"/>
+	</ScriptClass>
+</ClassFactory>
