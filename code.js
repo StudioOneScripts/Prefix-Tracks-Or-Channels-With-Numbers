@@ -20,8 +20,8 @@ function userFunction()
 		for(i=0;i < trackList.numTracks; i++)
 		{
 			var track = trackList.getTrack(i)
-			var pad = (i+1).toString().padStart(3, '0')
-			functions.renameEvent(track, pad + "-" + track.name)
+			var num = (i+1).toString().padStart(3, '0')
+			functions.renameEvent(track, num + "-" + track.name)
 		}
 
 		return Host.Results.kResultOk;
