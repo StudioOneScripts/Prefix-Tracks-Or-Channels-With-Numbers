@@ -10,11 +10,11 @@
 		return Host.Results.kResultOk;
 	}
 
-	// -----------------------------------------------------------------
+	// ---------- TRACKS -----------------------------------------
 
 	this.performEdit = function (context)
 	{
-		if (this.target.string == "Tracks")
+		if (this.target.string.toLowerCase.trim() == "tracks")
 		{
 			let trackList = context.mainTrackList
 			let functions = context.functions
@@ -27,9 +27,9 @@
 			}
 		}
 
-	    // ------------------------------------------------------------
-		
-		if (this.target.string == "Channels" || this.target.string == "")
+		// -- CHANNELS: THIS DOES NOT GO INTO UNDO SYSTEM FOR SOME REASON? ---
+
+		if (this.target.string.toLowerCase().trim() == "channels" || this.target.string.trim() == "")
 		{
 			var environment = context.functions.root.environment;
 			var console = environment.find ("MixerConsole");
