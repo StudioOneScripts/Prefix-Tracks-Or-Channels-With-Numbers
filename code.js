@@ -1,7 +1,4 @@
-﻿// include_file("resource://{main}/sdk/cclapp.js");
-const kPackageID="prefix.tracks";
-
-function userFunction()
+﻿function userFunction()
 {
 	this.interfaces =  [Host.Interfaces.IEditTask]
 
