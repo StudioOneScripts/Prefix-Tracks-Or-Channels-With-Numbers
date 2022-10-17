@@ -4,9 +4,10 @@
 		classID="{BFCF769E-3298-A993-C35E-3C8757763730}"
 		category="EditTask"
 		subCategory="TrackEdit"
-		name="Prefix Tracks With Numbers"
+		name="Prefix Tracks or Channels With Numbers"
 		sourceFile="code.js"
 		functionName="createInstance">
+		<Attribute id="arguments" value="Target"/>
 		<Attribute id="menuPriority" value="0"/>
 	</ScriptClass>
 </ClassFactory>

@@ -7,6 +7,9 @@ function userFunction()
 
 	this.prepareEdit = function (context)
 	{
+		var parameters = context.parameters;
+		this.target = parameters.addString("Target")
+
 		return Host.Results.kResultOk;
 	}
 
@@ -14,43 +17,44 @@ function userFunction()
 
 	this.performEdit = function (context)
 	{
-		let trackList = context.mainTrackList
-		let functions = context.functions
-
-		for(i=0;i < trackList.numTracks; i++)
+		if (this.target.string == "Tracks")
 		{
-			var track = trackList.getTrack(i)
-			var num = (i+1).toString().padStart(3, '0')
-			functions.renameEvent(track, num + "-" + track.name)
+			let trackList = context.mainTrackList
+			let functions = context.functions
+
+			for(i=0;i < trackList.numTracks; i++)
+			{
+				var track = trackList.getTrack(i)
+				var num = (i+1).toString().padStart(3, '0')
+				functions.renameEvent(track, num + "-" + track.name)
+			}
+		}
+
+	    // ------------------------------------------------------------
+		
+		if (this.target.string == "Channels" || this.target.string == "")
+		{
+			var environment = context.functions.root.environment;
+			var console = environment.find ("MixerConsole");
+			var channelList = console.getChannelList(1);
+
+			for(i=0;i < channelList.numChannels; i++)
+			{
+				var channel = channelList.getChannel(i)
+				var num = (i+1).toString().padStart(3, '0')
+				channel.label = (num + "-" + channel.label)
+			}
 		}
 
 		return Host.Results.kResultOk;
 	}
-
 }
 
 // ---------------------------------------------------------------------
-
-// entry function
 function createInstance()
 {
 	return new userFunction();
 }
 
-// ---------------------------------------------------------------------
 
-// messaging shortcuts
-function print  (msg) { Host.Console.writeLine(msg.toString()) }
-function alert  (msg) { Host.GUI.alert(msg.toString()) }
 
-// parse object properties
-function getAllPropertyNames(obj)
-{
-	var props = [];
-	do
-	{
-		props = props.concat(Object.getOwnPropertyNames(obj));
-	} while (obj = Object.getPrototypeOf(obj));
-	for (i in props)
-		print(props[i])
-}
