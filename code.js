@@ -10,8 +10,6 @@
 		return Host.Results.kResultOk;
 	}
 
-
-
 	this.performEdit = function (context)
 	{
 		// ---------- TRACKS -----------------------------------------
