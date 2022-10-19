@@ -10,10 +10,12 @@
 		return Host.Results.kResultOk;
 	}
 
-	// ---------- TRACKS -----------------------------------------
+
 
 	this.performEdit = function (context)
 	{
+		// ---------- TRACKS -----------------------------------------
+
 		if (this.target.string.toLowerCase.trim() == "tracks")
 		{
 			let trackList = context.mainTrackList
