@@ -14,7 +14,7 @@
 	{
 		// ---------- TRACKS -----------------------------------------
 
-		if (this.target.string.toLowerCase.trim() == "tracks")
+		if (this.target.string.toLowerCase().trim() == "tracks")
 		{
 			let trackList = context.mainTrackList
 			let functions = context.functions
