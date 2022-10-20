@@ -38,7 +38,6 @@
 			for(i=0;i < channelList.numChannels; i++)
 			{ 
 				var channel = channelList.getChannel(i)
-				Host.Console.writeLine(channel.label.toString())
 				var num = (i).toString().padStart(3, '0')
 				channel.label = (num + "-" + channel.label)
 			}
