@@ -20,9 +20,9 @@
 			let functions = context.functions
 
 			for(i=0;i < trackList.numTracks; i++)
-			{
+			{ 
 				var track = trackList.getTrack(i)
-				var num = (i+1).toString().padStart(3, '0')
+				var num = (i).toString().padStart(3, '0')
 				functions.renameEvent(track, num + "-" + track.name)
 			}
 		}
@@ -36,9 +36,10 @@
 			var channelList = console.getChannelList(1);
 
 			for(i=0;i < channelList.numChannels; i++)
-			{
+			{ 
 				var channel = channelList.getChannel(i)
-				var num = (i+1).toString().padStart(3, '0')
+				Host.Console.writeLine(channel.label.toString())
+				var num = (i).toString().padStart(3, '0')
 				channel.label = (num + "-" + channel.label)
 			}
 		}
